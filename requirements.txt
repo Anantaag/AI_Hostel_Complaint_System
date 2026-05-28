@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+pandas
+scikit-learn
+numpy
+streamlit
+plotly
+sentence-transformers
+faiss-cpu

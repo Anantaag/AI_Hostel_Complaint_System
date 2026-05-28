@@ -1,0 +1,11 @@
+complaint,category,priority
+WiFi not working,Internet,Medium
+Internet is very slow,Internet,Medium
+Water leakage in bathroom,Plumbing,High
+Washroom pipe burst,Plumbing,High
+Tube light not working,Electrical,Medium
+Smoke from switchboard,Electrical,Critical
+Mess food is spoiled,Mess,High
+Room not cleaned,Cleanliness,Low
+Fan not working,Electrical,Medium
+No water supply,Plumbing,High
