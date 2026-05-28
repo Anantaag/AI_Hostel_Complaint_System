@@ -4,7 +4,7 @@ sqlalchemy
 pandas
 scikit-learn
 numpy
-streamlit
+//streamlit
 plotly
-sentence-transformers
-faiss-cpu
+//sentence-transformers
+//faiss-cpu
