@@ -5,7 +5,6 @@ from sqlalchemy.orm import Session
 
 from backend.database import engine, SessionLocal, Base
 from backend.models import Ticket
-from models.rag_engine import retrieve_policy
 
 with open("models/classifier.pkl", "rb") as f:
     classifier = pickle.load(f)
@@ -35,7 +34,7 @@ def submit_ticket(ticket: TicketRequest):
     complaint_vector = vectorizer.transform([ticket.complaint])
     predicted_category = classifier.predict(complaint_vector)[0]
     # Retrieve relevant policy
-    retrieved_policy = retrieve_policy(ticket.complaint)
+    # retrieved_policy = retrieve_policy(ticket.complaint)
     priority = "Medium"
 
     if predicted_category in ["Plumbing", "Electrical"]:
@@ -50,7 +49,7 @@ def submit_ticket(ticket: TicketRequest):
         f"Your complaint has been classified as "
         f"{predicted_category} and marked as "
         f"{priority} priority. "
-        f"Relevant policy: {retrieved_policy}"
+        # f"Relevant policy: {retrieved_policy}"
     )
 
 
@@ -63,7 +62,7 @@ def submit_ticket(ticket: TicketRequest):
         "ticket_id": new_ticket.id,
         "category": predicted_category,
         "priority": priority,
-        "policy": retrieved_policy,
+        # "policy": retrieved_policy,
         "response": response_message
     }
 @app.get("/tickets")
